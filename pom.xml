@@ -112,7 +112,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.masrik.demointerface/com.masrik.demointerface.HelloApplication</mainClass>
+                            <mainClass>com.masrik.demointerface/com.masrik.equation_solver.HelloApplication</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

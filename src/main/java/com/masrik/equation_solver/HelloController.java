@@ -1,4 +1,4 @@
-package com.masrik.demointerface;
+package com.masrik.equation_solver;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

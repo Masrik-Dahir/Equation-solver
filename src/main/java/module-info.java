@@ -10,6 +10,6 @@ module com.masrik.demointerface {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
 
-    opens com.masrik.demointerface to javafx.fxml;
-    exports com.masrik.demointerface;
+    opens com.masrik.equation_solver to javafx.fxml;
+    exports com.masrik.equation_solver;
 }
