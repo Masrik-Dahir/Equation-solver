@@ -113,8 +113,21 @@ public class Future_value_euqation extends Application {
         launch(args);
     }
 
+    public static double to_double(TextField text){
+        return Double.parseDouble(text.getText());
+    }
+
+    public static int to_int(TextField text){
+        return Integer.parseInt(text.getText());
+    }
+
+    public static String to_string(TextField text){
+        return text.getText();
+    }
+
     public static void calc(){
         String val = "";
+        double value;
         int _case = 0;
         if ( !(text_field_N.getText().trim().equals("")) &&
                 !(text_field_R.getText().trim().equals("")) &&
@@ -123,18 +136,18 @@ public class Future_value_euqation extends Application {
         }
 
         else if ( !(text_field_N.getText().trim().equals("")) &&
-                !(text_field_R.getText().trim().equals("")) &&
-                !(text_field_PV.getText().trim().equals("")) ){
+                !(text_field_FV.getText().trim().equals("")) &&
+                !(text_field_R.getText().trim().equals("")) ){
             _case = 2;
         }
 
         else if ( !(text_field_N.getText().trim().equals("")) &&
-                !(text_field_R.getText().trim().equals("")) &&
+                !(text_field_FV.getText().trim().equals("")) &&
                 !(text_field_PV.getText().trim().equals("")) ){
             _case = 3;
         }
 
-        else if ( !(text_field_N.getText().trim().equals("")) &&
+        else if ( !(text_field_FV.getText().trim().equals("")) &&
                 !(text_field_R.getText().trim().equals("")) &&
                 !(text_field_PV.getText().trim().equals("")) ){
             _case = 4;
@@ -142,16 +155,20 @@ public class Future_value_euqation extends Application {
 
         switch(_case) {
             case 1:
-                // code block
+                value = to_double(text_field_PV)*Math.pow ((1 + to_double(text_field_R)), to_double(text_field_N));
+                text_field_FV.setText(String.valueOf(value));
                 break;
             case 2:
-                // code block
+                value = to_double(text_field_FV)/(Math.pow ((1 + to_double(text_field_R)), to_double(text_field_N)));
+                text_field_PV.setText(String.valueOf(value));
                 break;
             case 3:
-                // code block
+                value = Math.pow(to_double(text_field_FV)/to_double(text_field_PV), 1/to_double(text_field_N)) - 1;
+                text_field_R.setText(String.valueOf(value));
                 break;
             case 4:
-                // code block
+                value = Math.log(to_double(text_field_FV)/to_double(text_field_PV))/Math.log(1 + to_double(text_field_R));
+                text_field_N.setText(String.valueOf(value));
                 break;
             default:
                 // code block
